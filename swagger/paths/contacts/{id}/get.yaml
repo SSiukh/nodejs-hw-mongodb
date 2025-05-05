@@ -38,4 +38,18 @@ responses:
   '401':
     $ref: '../../../components/responses/401.yaml'
   '400':
-    $ref: '../../../components/responses/400.yaml'
+    description: Bad request error
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+          properties:
+            status:
+              type: integer
+              example: 400
+            message:
+              type: string
+              example: "Bad request, id 67e5998f3cade07c0eb1bed isn't valid"
